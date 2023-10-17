@@ -66,7 +66,8 @@ function compositeImages(
       if (colIndex === 0) {
         left -= horizontalShift; // Shift for even-numbered rows
       } else {
-        left += colIndex * imageWidth - horizontalShift; // Shift for even-numbered rows
+        left += colIndex * imageWidth;
+        left -= horizontalShift; // Shift for even-numbered rows
       }
       skewX = skew;
     }
