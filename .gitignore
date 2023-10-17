@@ -134,3 +134,6 @@ dist
 
 # macOS-specific files
 .DS_Store
+.frontmatter/database/mediaDb.json
+.frontmatter/database/taxonomyDb.json
+frontmatter.json
