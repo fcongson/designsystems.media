@@ -144,6 +144,23 @@ if (!fs.existsSync(tempDir)) {
 const imageWidth = 640;
 const imageHeight = 360;
 
+// Function to delete a directory and its contents recursively
+function deleteFolderRecursive(folderPath) {
+  if (fs.existsSync(folderPath)) {
+    fs.readdirSync(folderPath).forEach((file) => {
+      const curPath = path.join(folderPath, file);
+      if (fs.lstatSync(curPath).isDirectory()) {
+        // Recursively delete subdirectories
+        deleteFolderRecursive(curPath);
+      } else {
+        // Delete files
+        fs.unlinkSync(curPath);
+      }
+    });
+    fs.rmdirSync(folderPath); // Finally, delete the directory itself
+  }
+}
+
 async function generateCompositeImage() {
   try {
     const background = createBlackBackground(outputWidth, outputHeight);
@@ -165,6 +182,10 @@ async function generateCompositeImage() {
     console.log("Composite image created successfully.");
 
     await composite.toFile(outputImage);
+
+    // Delete the temporary directory when finished
+    deleteFolderRecursive(tempDir);
+    console.log("Temporary directory deleted.");
   } catch (err) {
     console.error(err);
   }
