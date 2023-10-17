@@ -52,7 +52,9 @@ function compositeImages(
   horizontalShift,
   tempDir
 ) {
-  const compositeImages = selectedImages.map((image, index) => {
+  const compositeImages = [];
+
+  for (let index = 0; index < selectedImages.length; index++) {
     const rowIndex = Math.floor(index / numCols);
     const colIndex = index % numCols;
     const isShiftedRow = rowIndex % 2 === 0; // Rows 0, 2, 4 are even-numbered rows
@@ -62,26 +64,30 @@ function compositeImages(
 
     if (isShiftedRow) {
       if (colIndex === 0) {
-        left -= horizontalShift; // Shift for rows 0, 2, 4
+        left -= horizontalShift; // Shift for even-numbered rows
       } else {
-        left += colIndex * imageWidth - horizontalShift; // Shift for rows 0, 2, 4
+        left += colIndex * imageWidth - horizontalShift; // Shift for even-numbered rows
       }
       skewX = skew;
     }
 
-    return {
+    compositeImages.push({
       input: path.join(tempDir, `image_${index}.jpg`),
       top: rowIndex * imageHeight,
       left,
       skewX,
-    };
-  });
+    });
+  }
+
+  // Calculate the dimensions for the composite image
+  const compositeWidth = numCols * imageWidth;
+  const compositeHeight = numRows * imageHeight;
 
   return sharp({
     create: {
-      width: imageWidth * numCols,
-      height: imageHeight * numRows,
-      channels: 3, // Use 3 channels (RGB) for the composite image
+      width: compositeWidth,
+      height: compositeHeight,
+      channels: 3,
       background: { r: 0, g: 0, b: 0 }, // Solid black background
     },
   }).composite(compositeImages);
