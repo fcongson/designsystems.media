@@ -3,7 +3,7 @@ const path = require("path");
 const sharp = require("sharp");
 const sourceDir = "../src/content/media"; // Path to the directory with subdirectories
 const outputImage = "../public/heroImage-masonry.jpg"; // Path for the final output image
-const numImagesToSelect = 33; // Number of images to select and process (30 + 3 extra)
+const numImagesToSelect = 36; // Number of images to select and process (30 + 3 extra)
 
 // Function to create a black background image
 function createBlackBackground(outputWidth, outputHeight) {
@@ -57,18 +57,13 @@ function compositeImages(
   for (let index = 0; index < selectedImages.length; index++) {
     const rowIndex = Math.floor(index / numCols);
     const colIndex = index % numCols;
-    const isShiftedRow = rowIndex % 2 === 0; // Rows 0, 2, 4 are even-numbered rows
+    const isShiftedRow = [0, 2, 4].includes(rowIndex); // Rows 0, 2, 4 require horizontal shift
 
     let left = colIndex * imageWidth;
     let skewX = 0;
 
     if (isShiftedRow) {
-      if (colIndex === 0) {
-        left -= horizontalShift; // Shift for even-numbered rows
-      } else {
-        left += colIndex * imageWidth;
-        left -= horizontalShift; // Shift for even-numbered rows
-      }
+      left -= horizontalShift; // Apply horizontal shift for rows 0, 2, 4
       skewX = skew;
     }
 
@@ -81,8 +76,8 @@ function compositeImages(
   }
 
   // Calculate the dimensions for the composite image
-  const compositeWidth = numCols * imageWidth;
-  const compositeHeight = numRows * imageHeight;
+  const compositeWidth = outputWidth;
+  const compositeHeight = outputHeight;
 
   return sharp({
     create: {
@@ -127,16 +122,16 @@ function shuffleArray(array) {
 }
 shuffleArray(potentialImages);
 
-// Select the first 33 images from the shuffled array
+// Select the first 36 images from the shuffled array
 const selectedImages = potentialImages.slice(0, numImagesToSelect);
 
 // Set the output dimensions
-const numRows = 6;
-const numCols = 5; // Set to 5 columns
+const numRows = 6; // Each row will contain 6 images
+const numCols = 6; // Each row will contain 6 images
 const outputWidth = 3200; // Set to 3200 pixels wide
-const outputHeight = 2160;
+const outputHeight = 1800; // Adjusted for 6 rows
 const skew = 0; // Adjust as needed
-const horizontalShift = -320; // Horizontal shift remains -320
+const horizontalShift = 320; // Horizontal shift remains -320
 
 // Create a 'temp' directory for temporary files
 const tempDir = path.join(__dirname, "temp");
