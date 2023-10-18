@@ -23,8 +23,8 @@ const {
 } = Astro.props;
 ---
 
-<article data-pagefind-body data-pagefind-sort>
-  <div class="hero-image" data-pagefind-meta={`image:${image.src}`}>
+<article>
+  <div class="hero-image">
     <YouTube
       id={videoUrl ?? ""}
       class="video-embed"
@@ -35,19 +35,18 @@ const {
     </div>
   </div>
   <div class="title">
-    <h1 data-pagefind-meta="title">{title}</h1>
+    <h1>{title}</h1>
   </div>
   <div class="single-page">
     <div class="meta-data">
       <span class="inline"
         ><Icon name="fluent:calendar-date-20-filled" size="20" />
-        <FormattedDate date={publishedAt} data-pagefind-sort="date" /></span
+        <FormattedDate date={publishedAt}  /></span
       >
       <span class="inline"
         ><Icon name="fluent:clock-20-filled" size="20" />
         <VideoDuration
           durationStr={duration}
-          data-pagefind-sort="duration"
         /></span
       >
       <span class="inline"
@@ -62,8 +61,6 @@ const {
             <a
               href={`/tags/${tag}`}
               class="tag"
-              data-pagefind-filter="tag"
-              data-pagefind-weight="5"
             >
               {tag}
             </a>
@@ -77,8 +74,6 @@ const {
             <a
               href={`/speakers/${speaker}`}
               class="speaker"
-              data-pagefind-filter="speaker"
-              data-pagefind-weight="5"
             >
               {speaker}
             </a>
@@ -87,7 +82,7 @@ const {
       </div>
     </div>
 
-    <div class="prose" data-pagefind-weight="3">
+    <div class="prose">
       <slot />
     </div>
   </div>
