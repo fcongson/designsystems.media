@@ -57,6 +57,13 @@ function generateMdxFile(video, folderPath) {
   const videoTitle = video.title;
   const videoUrl = video.videoUrl;
   const videoDescription = video.description;
+  const privacyStatus = video.privacyStatus;
+
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = String(today.getMonth() + 1).padStart(2, "0"); // Months are 0-based, so add 1 and pad with leading zero
+  const day = String(today.getDate()).padStart(2, "0"); // Pad with leading zero
+  const formattedDate = `${year}-${month}-${day}`;
 
   // Define a function to remove special characters from a string
   function removeSpecialCharacters(str) {
@@ -92,12 +99,14 @@ function generateMdxFile(video, folderPath) {
 title: "${videoTitle}"
 publishedAt: "${video.publishedAt}"
 image: "${thumbnailUrl}"
+dateAdded: "${formattedDate}"
 poster: "${posterUrl}"
 videoUrl: "${videoUrl}"
 localImages: false
 tags: ["Unsorted"]
 categories: ["Video"]
 duration: "${video.duration}"
+privacyStatus: "${privacyStatus}"
 draft: true
 speakers: ["Unsorted"]
 ---

@@ -119,6 +119,12 @@ function calculatePostCountForSpeaker(speakerName) {
     details {
     }
   }
+
+  @media screen and (max-width: 1024px) {
+    #sidebar {
+      display: none;
+    }
+  }
   @media screen and (min-width: 1024px) {
     #sidebar {
       padding: 0.5rem 0 1rem;
@@ -185,8 +191,8 @@ function calculatePostCountForSpeaker(speakerName) {
   summary {
     font-weight: bold;
     font-size: 1rem;
-    margin: -0.2em -0.5em 0;
-    padding: 0.2em 1.5rem;
+    margin: -0.2em 0;
+    padding: 0.2em 1rem;
     list-style: none;
     position: relative;
   }

@@ -38,7 +38,7 @@ const totalSpeakerCount = uniqueSpeakers.length;
 <div class="libraryStats">
   <a href="/all">
     <div class="stat">
-      <Icon name="fluent:video-clip-multiple-24-regular" size="4em" />
+      <Icon name="fluent:video-clip-multiple-24-regular" />
       <div class="info">
         <div data-type="label">Videos</div>
         <div data-type="count">{postCount}</div>
@@ -46,7 +46,7 @@ const totalSpeakerCount = uniqueSpeakers.length;
     </div></a
   ><a href="/speakers">
     <div class="stat">
-      <Icon name="fluent:person-24-regular" size="4em" />
+      <Icon name="fluent:person-24-regular" />
       <div class="info">
         <div data-type="label">Speakers</div>
         <div data-type="count">{totalSpeakerCount}</div>
@@ -54,7 +54,7 @@ const totalSpeakerCount = uniqueSpeakers.length;
     </div></a
   ><a href="/tags">
     <div class="stat">
-      <Icon name="fluent:tag-multiple-24-regular" size="4em" />
+      <Icon name="fluent:tag-multiple-24-regular" />
       <div class="info">
         <div data-type="label">Tags</div>
         <div data-type="count">{totalTagCount}</div>
@@ -69,12 +69,20 @@ const totalSpeakerCount = uniqueSpeakers.length;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;
     margin-block: 0rem 0.5rem;
+    margin-block-end: 2rem;
     font-size: 1em;
     padding: 1rem;
   }
   @media screen and (max-width: 1024px) {
     .libraryStats {
       gap: 1rem;
+    }
+  }
+  @media screen and (max-width: 320px) {
+    .libraryStats {
+      gap: 0.5rem;
+      font-size: 0.75em;
+      padding: 0.75rem;
     }
   }
   .libraryStats .stat {
@@ -96,12 +104,11 @@ const totalSpeakerCount = uniqueSpeakers.length;
   .libraryStats a:hover div[data-type="count"] {
     border-bottom: 2px solid var(--tagCount-count);
   }
-  .libraryStats a .stat div[data-type="count"] {
-  }
 
   .libraryStats [astro-icon] {
     color: var(--tagCount-icon);
     fill: var(--tagCount-icon);
+    max-height: 4rem;
   }
 
   .libraryStats div[data-type="label"] {
