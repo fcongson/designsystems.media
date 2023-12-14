@@ -1,5 +1,54 @@
 [
   {
+    "name": "Design Systems Social Club",
+    "platform": "youtube",
+    "channelName": "@DesignSystemSocialClub",
+    "type": "youtube-playlist",
+    "url": "https://www.youtube.com/playlist?list=PLZXMi7oD5GMMaACXR21jNy96F16fPrRqb"
+  },
+  {
+    "name": "Design Systems Social Club",
+    "platform": "youtube",
+    "channelName": "@DesignSystemSocialClub",
+    "type": "youtube-playlist",
+    "url": "https://www.youtube.com/playlist?list=PLZXMi7oD5GMNJh26dSteqzyF31Rl_Vppn"
+  },
+  {
+    "name": "Design Systems Media",
+    "platform": "youtube",
+    "channelName": "@joshharwood",
+    "type": "youtube-playlist",
+    "url": "https://www.youtube.com/playlist?list=PLzgVKXm-2BlY93wwupEqHuV6XHuRr9-ZC"
+  },
+  {
+    "name": "Introduction to design systems",
+    "platform": "youtube",
+    "channelName": "@Figma",
+    "type": "youtube-playlist",
+    "url": "https://www.youtube.com/playlist?list=PLXDU_eVOJTx6vqOWJSWH87Zb5-riiG63A"
+  },
+  {
+    "name": "Design Systems",
+    "platform": "youtube",
+    "channelName": "@Sparkbox",
+    "type": "youtube-playlist",
+    "url": "https://www.youtube.com/playlist?list=PL6De8qQmbLATIpLPNqsrTuoPOkOvCCpHA"
+  },
+  {
+    "name": "Design Systems",
+    "platform": "youtube",
+    "channelName": "@vaexperience",
+    "type": "youtube-playlist",
+    "url": "https://www.youtube.com/playlist?list=PLM2Dd2NIn2CqxUkHHiDvDbNIbqbv8ehy_"
+  },
+  {
+    "name": "Into Design Systems",
+    "platform": "youtube",
+    "channelName": "@IntoDesignSystems",
+    "type": "youtube-playlist",
+    "url": "https://www.youtube.com/playlist?list=PLMGy4p_QbO8zsUMBkcKsEm7kmAP2CWI2l"
+  },
+  {
     "name": "Backlight",
     "platform": "youtube",
     "channelName": "@backlight_dev",
@@ -28,41 +77,6 @@
     "url": "https://www.youtube.com/channel/UC8yAiDHVuCDPwdpnVruq-MA"
   },
   {
-    "name": "Introduction to design systems",
-    "platform": "youtube",
-    "channelName": "@Figma",
-    "type": "youtube-playlist",
-    "url": "https://www.youtube.com/playlist?list=PLXDU_eVOJTx6vqOWJSWH87Zb5-riiG63A"
-  },
-  {
-    "name": "Design Systems Series",
-    "platform": "youtube",
-    "channelName": "@InVision",
-    "type": "youtube-playlist",
-    "url": "https://www.youtube.com/playlist?list=PLeWHfyz6lrQW2xdG_Hj-GhFIbMuOdy4TK"
-  },
-  {
-    "name": "Design Systems",
-    "platform": "youtube",
-    "channelName": "@Sparkbox",
-    "type": "youtube-playlist",
-    "url": "https://www.youtube.com/playlist?list=PL6De8qQmbLATIpLPNqsrTuoPOkOvCCpHA"
-  },
-  {
-    "name": "Design Systems",
-    "platform": "youtube",
-    "channelName": "@vaexperience",
-    "type": "youtube-playlist",
-    "url": "https://www.youtube.com/playlist?list=PLM2Dd2NIn2CqxUkHHiDvDbNIbqbv8ehy_"
-  },
-  {
-    "name": "Into Design Systems",
-    "platform": "youtube",
-    "channelName": "@IntoDesignSystems",
-    "type": "youtube-playlist",
-    "url": "https://www.youtube.com/playlist?app=desktop&list=PLMGy4p_QbO8zsUMBkcKsEm7kmAP2CWI2l"
-  },
-  {
     "name": "Design Systems Community",
     "platform": "youtube",
     "channelName": "@DesignSystemsCommunity",
@@ -70,11 +84,11 @@
     "url": "https://www.youtube.com/channel/UCeBXd1VEjbHYHdjqwkEHU_w"
   },
   {
-    "name": "Design Systems Media",
+    "name": "Design Systems Social Club",
     "platform": "youtube",
-    "channelName": "@joshharwood",
-    "type": "youtube-playlist",
-    "url": "https://www.youtube.com/playlist?list=PLzgVKXm-2BlY93wwupEqHuV6XHuRr9-ZC"
+    "channelName": "@DesignSystemSocialClub",
+    "type": "youtube-channel",
+    "url": "https://www.youtube.com/channel/UC50hdmOJoCEl1mAzLCLf7QA"
   },
   {
     "name": "DS Video Aggregator",

@@ -1,9 +1,9 @@
 ---
 import { YouTube } from "@astro-community/astro-embed-youtube";
-import type { CollectionEntry } from "astro:content";
-import VideoDuration from "../components/VideoDuration.astro";
-import FormattedDate from "../components/FormattedDate.astro";
 import { Icon } from "astro-icon";
+import type { CollectionEntry } from "astro:content";
+import FormattedDate from "../components/FormattedDate.astro";
+import VideoDuration from "../components/VideoDuration.astro";
 type Media = CollectionEntry<"media">;
 type Props = Media["data"] & { slug?: Media["slug"] };
 
@@ -25,12 +25,7 @@ const {
 
 <article data-pagefind-body data-pagefind-sort>
   <div class="hero-image" data-pagefind-meta={`image:${image.src}`}>
-    <YouTube
-      id={videoUrl ?? ""}
-      class="video-embed"
-      transition:name={slug}
-      poster={poster.src}
-    />
+    <YouTube id={videoUrl ?? ""} class="video-embed" poster={poster.src} />
     <div class="background" style={`background-image: url('${image.src}')`}>
     </div>
   </div>
@@ -39,16 +34,20 @@ const {
   </div>
   <div class="single-page">
     <div class="meta-data">
-      <span
+      <span class="inline"
         ><Icon name="fluent:calendar-date-20-filled" size="20" />
         <FormattedDate date={publishedAt} data-pagefind-sort="date" /></span
       >
-      <span
+      <span class="inline"
         ><Icon name="fluent:clock-20-filled" size="20" />
         <VideoDuration
           durationStr={duration}
           data-pagefind-sort="duration"
         /></span
+      >
+      <span class="inline"
+        ><Icon name="fluent:window-new-20-filled" size="20" />
+        <a href={videoUrl} title={title}>Link to video</a></span
       >
       <div class="break"></div>
       <div class="tags">
@@ -226,6 +225,9 @@ const {
   }
   .meta-data [astro-icon] {
     margin-right: 0.25em;
+  }
+  .meta-data span.inline [astro-icon] {
+    margin-top: 0.2em;
   }
 
   .single-page {

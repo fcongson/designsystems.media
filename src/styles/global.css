@@ -24,6 +24,7 @@
   --tagCount-text: var(--body-text);
   --tagCount-label: var(--body-text);
   --tagCount-icon: rgba(var(--accent), 50%);
+  --tagCount-count: rgba(var(--accent), 80%);
   --tagCount-background: rgba(var(--accent), 10%);
 }
 
@@ -41,6 +42,9 @@ html[data-theme="light"] {
   --layout-border: rgb(222, 228, 234);
   --sidebar-background: rgb(255, 255, 255);
   --header-text: #000;
+  --footer-text: #000;
+  --footer-background: transparent;
+  --footer-background: rgba(var(--accent), 10%);
   --accent: 94, 67, 243;
   --accent-hover: #a688fa;
   --accent-dark: #7a5af5;
@@ -67,7 +71,7 @@ html[data-theme="light"] {
   --pagefind-ui-border-radius: 8px;
   --pagefind-ui-image-border-radius: 8px;
   --pagefind-ui-image-box-ratio: 16 / 9;
-  --pagefind-ui-font: sans-serif;
+  --pagefind-ui-font: "Atkinson", sans-serif;
 }
 html[data-theme="dark"] {
   --tx: var(--neutral-200);
@@ -83,6 +87,8 @@ html[data-theme="dark"] {
   --layout-border: rgb(29, 33, 37);
   --sidebar-background: var(--site-background);
   --header-text: rgb(222, 228, 234);
+  --footer-text: rgb(222, 228, 234);
+  --footer-background: rgba(var(--accent), 10%);
   --interactive: rgb(222, 228, 234);
   --accent: 145, 113, 248;
   --accent-hover: #a688fa;
@@ -102,8 +108,9 @@ html[data-theme="dark"] {
   --pagefind-ui-primary: #eeeeee;
   --pagefind-ui-text: var(--body-text);
   --pagefind-ui-background: transparent;
-  --pagefind-ui-border: var(--layout-border);
+  --pagefind-ui-border: rgba(var(--accent), 10%);
   --pagefind-ui-tag: #152028;
+  --pagefind-ui-font: "Atkinson", sans-serif;
 }
 
 @font-face {
@@ -134,12 +141,17 @@ body {
   color: var(--body-text);
   font-size: 20px;
   line-height: 1.7;
+  min-width: 320px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 main {
   width: 1200px;
   max-width: calc(100% - 2em);
   margin: auto;
   padding: 3em 1em;
+  flex: 1;
 }
 h1,
 h2,
@@ -274,6 +286,4 @@ hr {
   /* OR */
   fill: var(--meta-data);
   display: inline-block;
-
-  vertical-align: -0.25em;
 }
